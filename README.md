@@ -14,5 +14,5 @@ make build
 Run workflow with
 
 ```
- make run file=workflow.wdl input=input.json
+make run file=workflow.wdl input=input.json
 ```
