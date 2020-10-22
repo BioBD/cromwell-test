@@ -1,0 +1,10 @@
+{
+  "VEPWorkflow.vcf": "/app/trio.2010_06.ychr.sites.vcf.gz",
+  "VEPWorkflow.ref_fasta": "/opt/vep/Homo_sapiens_assembly38.fasta",
+  "VEPWorkflow.num_forks": 10,
+  "VEPWorkflow.offline_execution": true,
+  "VEPWorkflow.dir_cache":"/opt/vep/cache",
+  "VEPWorkflow.assembly_name":"GRCh38",
+  "VEPWorkflow.input_suffix":".g.vcf.gz",
+  "VEPWorkflow.extra_args":"--check_existing --symbol --regulatory --sift b --polyphen b --uniprot --hgvs --numbers --domains --canonical --biotype --uniprot --tsl --gene_phenotype --af --af_1kg --af_esp --af_gnomad --pubmed --variant_class --species homo_sapiens --failed 1 --appris --biotype"
+}
