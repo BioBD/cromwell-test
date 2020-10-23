@@ -1,5 +1,7 @@
 .PHONY: build run vep
 
+all: | build vep
+
 build:
 	@docker build . -t cromwell-test:vep
 
@@ -8,5 +10,3 @@ run:
 
 vep:
 	@$(MAKE) run file=simple_vep.wdl input=simple_vep.json
-
-all: | build vep

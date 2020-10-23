@@ -1,18 +1,32 @@
 # cromwell-test
-Testing Cromwell workflow
+Testing with Cromwell workflow
 
 ## Installing
 
-Needs docker and install with:
-
-```
-make build
-```
+Needs Docker and Docker Compose to run.
 
 ## Running
 
-Run workflow with
+### WDL Versions
+
+Running tests with version draft-2 and draft-3 (1.0)
 
 ```
-make run file=hello.wdl input=hello.json
+make wdl_versions
+```
+
+### VEP
+
+Running VEP experiments
+
+```
+make vep
+```
+
+### SLURM Cluster with Singularity
+
+Running Docker with Singularity submission to SLURM cluster (WIP)
+
+```
+make slurm
 ```

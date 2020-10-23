@@ -1,5 +1,7 @@
 .PHONY: build run hello
 
+all: | build hello
+
 build:
 	@docker build . -t cromwell-test:slurm
 	@-docker network create -d bridge cromwell-network
@@ -11,5 +13,3 @@ run:
 
 hello:
 	@$(MAKE) run file=hello.wdl input=hello.json
-
-all: | build hello
