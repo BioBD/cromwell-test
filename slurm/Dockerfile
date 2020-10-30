@@ -15,4 +15,6 @@ RUN echo "user.max_user_namespaces=15076" >> /etc/sysctl.conf \
 ADD cromwell-application.conf /opt/cromwell/cromwell-application.conf
 ADD cromwell_run.sh /opt/cromwell/cromwell_run
 
+RUN chmod a+x /opt/cromwell/cromwell_run
+
 ENTRYPOINT ["/bin/bash","-c","/opt/cromwell/cromwell_run ${*}"]
