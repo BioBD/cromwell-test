@@ -13,6 +13,8 @@ hello:
 
 with_spark:
 	@$(MAKE) run file=with_spark/print_reads.wdl input=hello.json
+	@-$(MAKE) run file=with_spark/base_recalibrator.wdl input=hello.json
 
 without_spark:
 	@$(MAKE) run file=without_spark/print_reads.wdl input=hello.json
+	@-$(MAKE) run file=without_spark/base_recalibrator.wdl input=hello.json
