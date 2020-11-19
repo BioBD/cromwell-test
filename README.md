@@ -31,6 +31,14 @@ Running VEP experiments
 make vep
 ```
 
+### GATK with Spark
+
+Integrating spark with GATK
+
+```
+make spark
+```
+
 ### SLURM Cluster with Singularity
 
 Running Docker with Singularity submission to SLURM cluster (WIP)
