@@ -14,8 +14,8 @@ hello:
 optional:
 	@$(MAKE) run file=optional_test/workflow_2.wdl input=optional_test/defined.json
 	@$(MAKE) run file=optional_test/workflow_2.wdl input=optional_test/undefined.json
-	@-$(MAKE) run file=optional_test/workflow_3.wdl input=optional_test/defined.json
-	@-$(MAKE) run file=optional_test/workflow_3.wdl input=optional_test/undefined.json
+	-@$(MAKE) run file=optional_test/workflow_3.wdl input=optional_test/defined.json
+	-@$(MAKE) run file=optional_test/workflow_3.wdl input=optional_test/undefined.json
 
 subflow:
-	@-$(MAKE) run file=subflow_test/workflow.wdl input=subflow_test/input.json
+	-@$(MAKE) run file=subflow_test/workflow.wdl input=subflow_test/input.json
