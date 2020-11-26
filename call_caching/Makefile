@@ -11,7 +11,7 @@ run:
 
 clean:
 	-@docker rm -f mysql-cromwell
-	@rm -rf $(shell pwd)/cromwell-executions/*
+	-@ rm -rf $(shell pwd)/cromwell-executions/*
 
 with_cache:
 	@$(MAKE) run file=hello.wdl input=input1.json
