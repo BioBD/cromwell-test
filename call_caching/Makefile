@@ -1,6 +1,6 @@
-.PHONY: build run hello clean
+.PHONY: build run with_cache without_cache clean
 
-all: | clean build hello clean
+all: | clean build with_cache without_cache clean
 
 build:
 	@docker build . -t cromwell-test:call_caching
@@ -13,6 +13,10 @@ clean:
 	-@docker rm -f mysql-cromwell
 	@rm -rf $(shell pwd)/cromwell-executions/*
 
-hello:
-	@$(MAKE) run file=hello.wdl input=hello.json
-	@$(MAKE) run file=hello.wdl input=hello.json
+with_cache:
+	@$(MAKE) run file=hello.wdl input=input1.json
+	@$(MAKE) run file=hello.wdl input=input1.json
+
+without_cache:
+	@$(MAKE) run file=hello.wdl input=input1.json
+	@$(MAKE) run file=hello.wdl input=input2.json

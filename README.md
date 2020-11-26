@@ -39,6 +39,13 @@ Integrating spark with GATK
 make spark
 ```
 
+### GATK with Spark
+
+Using call caching to reuse last run
+```
+make call_caching
+```
+
 ### SLURM Cluster with Singularity
 
 Running Docker with Singularity submission to SLURM cluster (WIP)
