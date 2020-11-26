@@ -1,6 +1,6 @@
-.PHONY: build run with_cache without_cache clean
+.PHONY: build run with_cache without_cache clean_before clean_after
 
-all: | clean build with_cache without_cache clean
+all: | clean_before build with_cache without_cache clean_after
 
 build:
 	@docker build . -t cromwell-test:call_caching
@@ -9,7 +9,7 @@ build:
 run:
 	@docker run --rm --network host -v "$(shell pwd)/src":/app -v "$(shell pwd)/cromwell-executions":/opt/cromwell/cromwell-executions -w /opt/cromwell cromwell-test:call_caching bash -c "/opt/cromwell/cromwell_run /app/$(file) -i /app/$(input)"
 
-clean:
+clean_before clean_after:
 	-@docker rm -f mysql-cromwell
 	-@rm -rf $(shell pwd)/cromwell-executions/*
 
