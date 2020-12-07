@@ -39,7 +39,7 @@ Integrating spark with GATK
 make spark
 ```
 
-### GATK with Spark
+### Call Caching
 
 Using call caching to reuse last run
 ```
