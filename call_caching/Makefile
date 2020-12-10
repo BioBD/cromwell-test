@@ -26,5 +26,5 @@ with_subflow:
 	@$(MAKE) run file=subflows/workflow.wdl input=subflows/input2.json
 
 cache_on_error:
-	@$(MAKE) run file=cache_on_error/workflow.wdl input=cache_on_error/input1.json
+	-@$(MAKE) run file=cache_on_error/workflow.wdl input=cache_on_error/input1.json
 	@$(MAKE) run file=cache_on_error/workflow.wdl input=cache_on_error/input2.json
