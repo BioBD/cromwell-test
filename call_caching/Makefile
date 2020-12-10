@@ -1,6 +1,6 @@
-.PHONY: build run with_cache without_cache with_subflow clean_before clean_after
+.PHONY: build run with_cache without_cache with_subflow cache_on_error clean_before clean_after
 
-all: | clean_before build with_cache without_cache with_subflow clean_after
+all: | clean_before build with_cache without_cache with_subflow cache_on_error clean_after
 
 build:
 	@docker build . -t cromwell-test:call_caching
@@ -24,3 +24,7 @@ without_cache:
 with_subflow:
 	@$(MAKE) run file=subflows/workflow.wdl input=subflows/input1.json
 	@$(MAKE) run file=subflows/workflow.wdl input=subflows/input2.json
+
+cache_on_error:
+	@$(MAKE) run file=cache_on_error/workflow.wdl input=cache_on_error/input1.json
+	@$(MAKE) run file=cache_on_error/workflow.wdl input=cache_on_error/input2.json
