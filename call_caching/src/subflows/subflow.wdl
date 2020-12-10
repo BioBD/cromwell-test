@@ -17,6 +17,9 @@ workflow Wf {
         String testing 
     }
     call hello_world {
-        name = testing
+        input: name=testing
+    }
+    output {
+        File out = hello_world.out
     }
 }

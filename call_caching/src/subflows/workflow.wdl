@@ -1,6 +1,6 @@
 version 1.0
 
-import "subworkflow.wdl" as sub
+import "subflow.wdl" as sub
 
 
 task hello_world {
@@ -21,6 +21,6 @@ workflow Main {
     }
     call hello_world
     call sub.Wf {
-        testing = name
+        input: testing=name
     }
 }
